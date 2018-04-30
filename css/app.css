@@ -1,0 +1,1403 @@
+/* Utility Class for Boxing Layout */
+
+.boxHelper {
+  color: #fff;
+  background-color: #000;
+  text-align: center;
+  height: 80px;
+}
+
+/* Project Colours Values */
+
+/*
+  color: #c3a252;
+  color: #f9c471;
+  color: #b78b4e;
+  color: #626a67;
+  color: #536b7f;
+  color: #000;
+  color: #fff;
+  color: #5daec3;
+  color: #7d7981;
+  color: #fee998;
+*/
+
+/* -------  ANIMATIONS ------ */
+
+@keyframes slideTop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes cd-bounce-1 {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.96);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0px 0px 0px 4px rgba(183, 139, 78, 0);
+  }
+  100% {
+    transform: scale(0.96);
+    box-shadow: 0 0 0 0 rgba(183, 139, 78, 0);
+  }
+}
+
+/* ---- END ANIMATIONS ------ */
+
+/* Home Page Rings Animation Rules*/
+
+.rings {
+  position: relative;
+  display: block;
+  width: 50vw;
+  height: 50vw;
+  /*  overflow: hidden;*/
+  opacity: 0.48;
+}
+
+.rings > * {
+  position: absolute;
+  bottom: 120px;
+  left: 50px;
+  width: 100%;
+  height: 100%;
+  animation: rotate infinite linear;
+}
+
+.rings > * > * {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ccc;
+  border-radius: 100%;
+  border-top-color: rgba(255, 255, 255, 0.75);
+  border-right-color: rgba(255, 255, 255, 0.5);
+  border-bottom-color: rgba(255, 255, 255, 0.25);
+  border-left-color: rgba(255, 255, 255, 0);
+}
+
+/*
+.rings > *:nth-child(1) {
+  position: absolute;
+  text-align: center;
+  color: #fff;
+  height: 1em;
+  top: calc(50% - 1em);
+}
+*/
+
+.rings > *:nth-child(2) {
+  animation-duration: 8s;
+}
+
+.rings > *:nth-child(3) {
+  animation-duration: 12s;
+  margin: 10%;
+  height: 80%;
+  width: 80%;
+}
+
+.rings > *:nth-child(4) {
+  animation-duration: 20s;
+  margin: 20%;
+  height: 60%;
+  width: 60%;
+}
+
+/* END Home Page Rings Animation Rules*/
+
+/* SVG ICON */
+
+#signIn_icon,
+#storeRegister {
+  width: 25px;
+}
+
+.cls-1 {
+  fill: #000;
+  stroke-miterlimit: 10;
+}
+
+.cls-1,
+.cls-2 {
+  stroke: #fff;
+  stroke-width: 8px;
+}
+
+.cls-2 {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: bevel;
+}
+
+#signIn_icon:hover .cls-1,
+#signIn_icon:hover .cls-2 {
+  stroke: #b78b4e;
+}
+
+.move {
+  transform: translateX(28px);
+  transition: transform 0.3s ease-in;
+}
+
+/* ----------------------- */
+
+body {
+  font-family: 'Rubik', sans-serif;
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+/* HOME PAGE*/
+
+/* Nav Hamburger Menu Mobile */
+
+#mainHeader {
+  margin-bottom: 20px;
+}
+
+.title-bar {
+  background-color: #000;
+  margin-bottom: 10px;
+  padding-right: 0;
+}
+
+.menu-icon::after {
+  background: #fff;
+  box-shadow: 0 7px 0 #fff, 0 14px 0 #fff;
+}
+
+.menu-icon:hover::after {
+  background: #b78b4e;
+  box-shadow: 0 7px 0 #b78b4e, 0 14px 0 #b78b4e;
+}
+
+.title-bar,
+.menu-icon {
+  margin-right: 0;
+}
+
+nav {
+  background-color: #000;
+}
+
+#mainNav,
+#social {
+  list-style-type: none;
+  text-align: center;
+  margin: 0;
+  background-color: #000;
+  position: relative;
+  bottom: 19px;
+}
+
+#mainNav li a {
+  display: block;
+  padding: 5px 0 5px 0;
+  color: #fff;
+  cursor: pointer;
+}
+
+#mainNav li {
+  border-bottom: 1px solid #7d7981;
+}
+
+#mainNav li:last-child {
+  margin-bottom: 10px;
+  font-weight: bold;
+  letter-spacing: 6px;
+}
+
+#mainNav li a:hover {
+  color: #b78b4e;
+}
+
+#social li,
+#socialFooter li {
+  display: inline;
+  margin-right: 20px;
+}
+
+#social li a,
+#socialFooter li a {
+  color: #fff;
+  list-style: none;
+  text-decoration: none;
+}
+
+.fa-youtube:hover {
+  color: red;
+}
+
+.fa-twitter:hover {
+  color: deepskyblue;
+}
+
+.fa-pinterest-p:hover {
+  color: darkred;
+}
+
+.fa-facebook-square:hover {
+  color: dodgerblue;
+}
+
+.svg-inline--fa.fa-w-12 {
+  width: 0.35em;
+}
+
+.svg-inline--fa.fa-w-14 {
+  width: 0.45em;
+}
+
+#searchForm {
+  margin-top: 20px;
+}
+
+.button {
+  background: #536b7f;
+}
+
+.button:hover {
+  background: #7d7981;
+}
+
+/* Home Mobile */
+
+#home {
+  height: 480px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#tagline {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.1em;
+  text-align: center;
+  margin-top: 135px;
+}
+
+#tagline span {
+  color: #f9c471;
+  font-weight: bold;
+}
+
+#homeLogo {
+  width: 80%;
+  margin-top: -40px;
+  opacity: 0.8;
+}
+
+
+/* MOVIE TIMELINE PAGE*/
+
+#timeline {
+  overflow: hidden;
+  background-repeat: no-repeat;
+  /*  background-position: center;*/
+  background-size: cover;
+}
+
+#tl_one p,
+#tl_two p,
+#tl_three p,
+#tl_four p {
+  color: #fff;
+  background-color: #000;
+  font-size: 0.7em;
+  padding: 10px;
+  margin-bottom: 30px;
+  max-width: 550px;
+  -webkit-box-shadow: -9px 9px 19px 0px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: -9px 9px 19px 0px rgba(0, 0, 0, 0.6);
+  box-shadow: -9px 9px 19px 0px rgba(0, 0, 0, 0.6);
+}
+
+#tl_one img,
+#tl_two img,
+#tl_three img,
+#tl_four img {
+  -webkit-box-shadow: -9px 9px 19px 0px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: -9px 9px 19px 0px rgba(0, 0, 0, 0.6);
+  box-shadow: -9px 9px 19px 0px rgba(0, 0, 0, 0.6);
+}
+
+#timelineTitle {
+  color: #000;
+  font-size: 1.1em;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+#t1 span,
+#t2 span,
+#t3 span,
+#t4 span {
+  font-weight: bold;
+}
+
+/* timelines separator rules */
+
+.cd-timeline {
+  overflow: hidden;
+  /*  margin: 2em auto;*/
+}
+
+.cd-timeline__container {
+  position: relative;
+  width: 90%;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 2em 0;
+}
+
+.cd-timeline__container::before {
+  /* this is the vertical line */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 18px;
+  height: 100%;
+  width: 6px;
+  background: #000;
+}
+
+.timelineDiv {
+  width: 5%;
+  margin-left: 20px;
+}
+
+/* END timelines rules */
+
+/* VIDEO TRAILER PAGE*/
+
+#video {
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#videoTitle {
+  color: #fff;
+  font-size: 1.1em;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* video controls rules */
+
+.controls {
+  /*  margin-top: 1.5em;*/
+}
+
+#videoControls {
+  margin: 0 auto;
+}
+
+[data-icon] {
+  font-size: 3em;
+  color: #fff;
+  cursor: pointer;
+}
+
+.controls ul {
+  list-style: none;
+  text-align: center;
+}
+
+.controls ul li {
+  display: inline-block;
+  padding: 0.1em;
+}
+
+/* CLIP RANGE INPUT Crossbrowser */
+
+input[type="range"] {
+  margin: auto;
+  -webkit-appearance: none;
+  position: relative;
+  overflow: hidden;
+  height: 6px;
+  width: 150px;
+  cursor: pointer;
+  margin-bottom: 12px;
+  margin-left: 10px;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+::-webkit-slider-runnable-track {
+  background: #ddd;
+  border: none;
+}
+
+::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  box-shadow: -100vw 0 0 100vw #b78b4e;
+}
+
+::-moz-range-track {
+  height: 40px;
+  background: #ddd;
+}
+
+::-moz-range-thumb {
+  background: #fff;
+  height: 40px;
+  width: 20px;
+
+  border-radius: 50%;
+  box-shadow: -100vw 0 0 100vw #b78b4e;
+  box-sizing: border-box;
+}
+
+::-ms-fill-lower {
+  background: #b78b4e;
+}
+
+::-ms-thumb {
+  background: #fff;
+  border-radius: 50%;
+  height: 40px;
+  width: 20px;
+  box-sizing: border-box;
+}
+
+::-ms-ticks-after {
+  display: none;
+}
+
+::-ms-ticks-before {
+  display: none;
+}
+
+::-ms-track {
+  background: #ddd;
+  color: transparent;
+  height: 40px;
+  border: none;
+}
+
+::-ms-tooltip {
+  display: none;
+}
+
+/* END INPUT RANGE RULES*/
+
+#muteBtn {
+  color: #fff;
+  cursor: pointer;
+}
+
+#volumeBar {
+  width: 100px;
+}
+
+#clipTiming {
+  display: none;
+  font-size: 1.1em;
+  vertical-align: bottom;
+  position: relative;
+  bottom: 10px;
+  color: #fff;
+}
+
+/* END video controls rules */
+
+/* play/pause icon */
+
+.svg-inline--fa.fa-w-16 {
+  width: 0.4em;
+}
+
+/* mute icon */
+
+.svg-inline--fa.fa-w-18 {
+  width: 0.4em;
+}
+
+.videoText {
+  color: #fff;
+  background-color: #000;
+  font-size: 0.7em;
+  padding: 10px;
+  margin-bottom: 30px;
+}
+
+/* PHOTO GALLERY PAGE*/
+
+#gallery {
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#photosTitle {
+  color: #000;
+  font-size: 1.1em;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+#castBtn,
+#scenesBtn {
+  color: #fff;
+  background-color: #000;
+  padding: 3px;
+  text-align: center;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+#castBtn:hover,
+#scenesBtn:hover {
+  cursor: pointer;
+}
+
+.gallerySelected {
+  color: #b78b4e !important;
+  font-weight: bold;
+}
+
+#castGallery p,
+#scenesGallery p {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.9);
+  ;
+  padding: 5px;
+  text-align: center;
+  font-size: 1.05em;
+}
+
+#castGallery p {
+  max-width: 360px;
+}
+
+#castGallery span {
+  color: #b78b4e;
+}
+
+#scenesGallery p {
+  font-size: 0.69em;
+  text-align: left;
+  max-width: 850px;
+}
+
+#castGallery img,
+#scenesGallery img,
+#castGallery p,
+#scenesGallery p {
+  -webkit-box-shadow: -9px 9px 19px 0px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: -9px 9px 19px 0px rgba(0, 0, 0, 0.6);
+  box-shadow: -9px 9px 19px 0px rgba(0, 0, 0, 0.6);
+}
+
+/* MOVIE FACTS PAGE*/
+
+#facts {
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#factsTitle {
+  color: #fff;
+  font-size: 1.1em;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+#movieFacts p {
+  color: #fff;
+  /*  background-color: #7d7981;*/
+  font-size: 0.8em;
+  padding: 10px;
+  max-height: 150px;
+}
+
+#movieFacts div > img {
+  border: 4px solid #c3a252;
+  padding: 2px;
+}
+
+/* REGISTRATION PAGE*/
+
+#registration {
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#registrationTitle {
+  color: #fff;
+  background-color: #000;
+  padding: 3px;
+  text-align: center;
+  margin-top: 30px;
+  letter-spacing: 4px;
+  font-weight: 600;
+}
+
+#signUp,
+#signIn {
+  background-color: rgba(0, 0, 0, 0.9);
+  margin-bottom: -5px;
+}
+
+#signUp p,
+#signIn p {
+  margin-top: 10px;
+  color: #fff;
+  font-size: 1.1em;
+}
+
+#registerNowPar,
+#signInHere {
+  color: #b78b4e !important;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+#signUpBtn,
+#signInBtn {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  letter-spacing: 2px;
+  padding: 8px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+
+#username,
+#confimrPass,
+#password,
+#usernameSignIn,
+#passwordSignIn {
+  border-radius: 3px;
+  border: 1px #fff solid;
+  padding-left: 10px;
+  font-weight: bolder;
+  color: #fff;
+  height: 40px;
+  margin-left: 10px;
+  background: #9e824f;
+  padding-right: 50px;
+}
+
+/* FOOTER */
+
+#mainFooter {
+  background-color: #000;
+}
+
+#mainFooter ul {
+  margin-top: 20px;
+}
+
+#copyright {
+  color: #fff;
+  font-size: 0.8em;
+  text-align: center;
+}
+
+#backTop {
+  -moz-box-shadow: 0 0 0 0 rgba(183, 139, 78, 1);
+  -webkit-box-shadow: 0 0 0 0 rgba(183, 139, 78, 1);
+  box-shadow: 0 0 0 0 rgba(183, 139, 78, 1);
+  -webkit-animation: pulse 1.5s infinite;
+  animation: pulse 1.5s infinite;
+}
+
+#backTop {
+  margin-top: 30px;
+}
+
+/* ------- ------- ------- */
+
+/* -------- STORE --------*/
+
+/* ------- ------ ------- */
+
+#mainContainer_store {
+  background-color: #000;
+}
+
+#store_logo {
+  width: 50%;
+  float: left;
+  padding: 10px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
+#mainHeader_store button {
+  margin-top: 20px;
+}
+
+#store img {
+  margin-bottom: 20px;
+}
+
+#footer_logo_store {
+  margin-top: 10px;
+}
+
+
+/* ----------- ------- ---------- */
+
+/* -------- MEDIA QUERIES --------*/
+
+/* ----------- ------ ----------- */
+
+/* 360px */
+
+@media screen and (min-width: 360px) {
+
+  #tagline {
+    margin-top: 100px;
+  }
+
+  #homeLogo {
+    width: 70%;
+  }
+
+  #poster {
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+/* 420px */
+
+@media screen and (min-width: 420px) {
+  #tagline {
+    margin-top: 145px;
+  }
+
+  #homeLogo {
+    width: 60%;
+    margin-top: -25px;
+  }
+
+  .rings {
+    width: 30vw;
+    height: 30vw;
+  }
+
+  .rings > * {
+    bottom: 120px;
+    left: 80px;
+  }
+
+  #castGallery img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  #castGallery p {
+    margin: 0 auto;
+  }
+
+  input[type="range"] {
+    width: 300px;
+  }
+
+}
+
+/* 500px */
+
+@media screen and (min-width: 500px) {
+  #tagline {
+    margin-top: 80px;
+  }
+
+  #homeLogo {
+    width: 60%;
+  }
+}
+
+/* 520px */
+
+@media screen and (min-width: 520px) {
+  #tagline {
+    margin-top: 80px;
+  }
+
+  #homeLogo {
+    width: 60%;
+    margin-top: -15px;
+  }
+
+  .rings > * {
+    bottom: 140px;
+    left: 89px;
+  }
+
+  .controls ul {
+    text-align: center;
+  }
+
+  input[type="range"] {
+    width: 300px;
+  }
+}
+
+/* 580px */
+
+@media screen and (min-width: 580px) {
+
+  #homeLogo {
+    width: 50%;
+  }
+
+  #username,
+  #confimrPass,
+  #password,
+  #usernameSignIn,
+  #passwordSignIn {
+    width: 480px;
+    margin: 0 auto;
+  }
+}
+
+/* 610px */
+
+@media screen and (min-width: 610px) {
+  #tagline {
+    margin-top: 70px;
+  }
+
+  #homeLogo {
+    width: 50%;
+  }
+
+  #pwdForgot {
+    margin-right: 40px;
+  }
+}
+
+
+/* 639px */
+
+@media screen and (min-width: 639px) {
+  #homeLogo {
+    width: 40%;
+  }
+  .rings > * {
+    bottom: 130px;
+    left: 69px;
+  }
+}
+
+/* MEDIUM - TABLET SIZE */
+
+/* 640px */
+
+@media screen and (min-width: 640px) {
+  #tagline {
+    margin-top: 36px;
+    font-size: 1.4em;
+    display: inline-block;
+  }
+
+  #homeLogo {
+    width: 40%;
+    margin-top: 10px;
+  }
+
+  .rings > * {
+    bottom: 136px;
+    left: 69px;
+  }
+
+  #poster {
+    width: 80%;
+    opacity: 0.91;
+    cursor: pointer;
+  }
+
+  #mainHeader {
+    position: relative;
+  }
+
+  nav {
+    height: 50px;
+  }
+
+  #mainNav {
+    text-align: left;
+    margin-top: 35px;
+  }
+
+  #social {
+    margin-top: 19px;
+  }
+
+  #mainNav li {
+    border-bottom: none;
+    display: inline;
+    margin-left: 18px;
+  }
+
+  #mainNav li a {
+    display: inline;
+    font-size: 0.73em;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.4s ease-in;
+  }
+
+  #mainNav li:first-child {
+    border-top: none;
+  }
+
+  #mainNav li:last-child {
+    letter-spacing: 4px;
+    -moz-box-shadow: 0 0 0 0 rgba(183, 139, 78, 0.8);
+    -webkit-box-shadow: 0 0 0 0 rgba(183, 139, 78, 0.8);
+    box-shadow: 0 0 0 0 rgba(183, 139, 78, 0.8);
+    -webkit-animation: pulse 1.5s infinite;
+    animation: pulse 1.5s infinite;
+  }
+
+  #mainNav li a:hover {
+    color: #b78b4e;
+    border-bottom: 1px solid #b78b4e;
+  }
+
+  #mainNav .is-active {
+    color: #b78b4e;
+    border-bottom: 1px solid #b78b4e;
+  }
+
+  #menuNav .is-active {
+    color: #b78b4e;
+    border-bottom: 1px solid #b78b4e;
+  }
+
+  #mainNav li:last-child:hover,
+  #menuNav li:last-child:hover {
+    animation: none;
+  }
+
+  #social li {
+    margin-right: 10px;
+  }
+
+  #social li a {
+    display: inline;
+    font-size: 0.80em;
+  }
+
+  .svg-inline--fa.fa-w-12 {
+    width: 0.25em;
+  }
+
+  .svg-inline--fa.fa-w-14 {
+    width: 0.35em;
+  }
+
+  .svg-inline--fa.fa-w-16 {
+    width: 0.25em;
+  }
+
+  .fa-search:hover {
+    transform: rotate(-20deg);
+  }
+
+  #timelineTitle,
+  #videoTitle,
+  #photosTitle,
+  #factsTitle,
+  #registrationTitle {
+    font-size: 1.9em;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  /* video controls rules */
+  .controls {
+    margin-top: 1.5em;
+  }
+
+  input[type="range"] {
+    width: 200px;
+  }
+
+  #volumeBar {
+    width: 100px;
+    display: block;
+  }
+
+  #clipTiming {
+    display: block;
+    font-size: 0.8em;
+  }
+
+  .videoText {
+    font-size: 1em;
+  }
+
+  .rewindToStart,
+  .play-pause,
+  .fwd,
+  #muteBtn {
+    font-size: 20px;
+  }
+
+  /* END video controls rules */
+  #movieFacts p {
+    font-size: 0.8em;
+    height: 90px;
+    line-height: 20px;
+  }
+
+  #footerNav {
+    text-align: left;
+  }
+
+  #footerNav li {
+    border-bottom: none;
+    display: inline;
+    margin-left: 10px;
+  }
+
+  #menuNav li a {
+    display: inline;
+    font-size: 0.69em;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.4s ease-in;
+    color: #fff;
+  }
+
+  #menuNav li:last-child {
+    letter-spacing: 4px;
+    -moz-box-shadow: 0 0 0 0 rgba(183, 139, 78, 0.8);
+    -webkit-box-shadow: 0 0 0 0 rgba(183, 139, 78, 0.8);
+    box-shadow: 0 0 0 0 rgba(183, 139, 78, 0.8);
+    -webkit-animation: pulse 1.5s infinite;
+    animation: pulse 1.5s infinite;
+  }
+
+  #menuNav li:hover {
+    border-bottom: 2px solid #b78b4e;
+  }
+
+  #menuNav li a:hover {
+    color: #b78b4e;
+  }
+
+  #socialFooter li {
+    margin-right: 4px;
+  }
+
+  #socialFooter li a {
+    display: inline;
+    font-size: 0.80em;
+  }
+
+  #socialFooter,
+  #menuNav {
+    margin: 0;
+  }
+
+  #socialFooter {
+    position: relative;
+    bottom: 11px;
+  }
+
+  #signInBtn {
+    margin-bottom: 30px;
+    margin-top: 35px;
+  }
+
+  #signupBtn {
+    margin-left: 20px;
+  }
+
+  #backHome {
+    width: 10%;
+  }
+
+  #backHome:hover {
+    transform: scale(1.8);
+  }
+
+  #menuNav li:first-child:hover {
+    border-bottom: none;
+    transform: none;
+  }
+
+  #tl_one p,
+  #tl_two p,
+  #tl_three p,
+  #tl_four p {
+    font-size: 1em;
+  }
+
+  #scenesGallery p {
+    padding: 10px;
+    font-size: 1.1em;
+  }
+
+  #registration .svg-inline--fa.fa-w-16 {
+    margin-right: 10px;
+  }
+}
+
+/* 760px */
+
+@media screen and (min-width: 760px) {
+
+  #homeLogo {
+    width: 40%;
+    margin-top: 10px;
+  }
+
+  .rings {
+    width: 25vw;
+    height: 25vw;
+  }
+
+  .rings > * {
+    bottom: 146px;
+    left: 89px;
+  }
+
+}
+
+/* 860px */
+
+@media screen and (min-width: 860px) {
+
+  #homeLogo {
+    width: 40%;
+    margin-top: 10px;
+  }
+
+  #tagline {
+    margin-top: -10px;
+  }
+
+  .rings > * {
+    bottom: 160px;
+    left: 89px;
+  }
+
+}
+
+
+/* 960px */
+
+@media screen and (min-width: 960px) {
+
+  #homeLogo {
+    width: 30%;
+    margin-top: 15px;
+  }
+
+  #scenesGallery > div {
+    margin-left: 40px;
+  }
+
+  #movieFacts p {
+    font-size: 1.1em;
+    height: 130px;
+    line-height: 24px;
+  }
+
+  #signUp p,
+  #signIn p {
+    margin-top: 30px;
+  }
+
+  #signUpBtn {
+    margin-top: 14px;
+  }
+}
+
+/* 1023px */
+
+@media screen and (min-width: 1023px) {
+
+  #tagline {
+    margin-top: -20px;
+  }
+
+  .rings {
+    width: 20vw;
+    height: 20vw;
+  }
+
+  #castBtn,
+  #scenesBtn {
+    margin-bottom: 60px;
+  }
+}
+
+/* LARGE - DESKTOP SIZE */
+
+/* 1024px */
+
+@media screen and (min-width: 1024px) {
+
+  #mainHeader {
+    background-color: #000;
+    opacity: 0.8;
+  }
+
+  #home {
+    height: auto;
+  }
+
+  #tagline {
+    font-size: 2.8em;
+    letter-spacing: 1px;
+    position: relative;
+    bottom: 80px;
+  }
+
+  .rings {
+    width: 24vw;
+    height: 24vw;
+    margin-bottom: 40px;
+  }
+
+  #mainNav li {
+    margin-left: 50px;
+  }
+
+  #homeLogo {
+    width: 55%;
+    margin-top: 69px;
+    margin-left: -5%;
+    opacity: 1;
+  }
+
+  .rings > * {
+    bottom: 300px;
+    left: 89px;
+  }
+
+  #timelineTitle,
+  #photosTitle,
+  #factsTitle,
+  #registrationTitle {
+    font-size: 3em;
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+
+  #videoTitle {
+    font-size: 3em;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  #castBtn,
+  #scenesBtn {
+    font-size: 1.6em;
+    padding: 2px;
+  }
+
+  #castGallery p {
+    height: 60px;
+  }
+
+  #scenesGallery > div {
+    margin-left: 0;
+  }
+
+  #scenesGallery p {
+    height: 210px;
+    font-size: 1em;
+  }
+
+  #signUp p,
+  #signIn p {
+    font-size: 1.8em;
+  }
+
+  header {
+    /*    position: fixed;*/
+    animation: slideTop 3s;
+    z-index: 991;
+    top: 0;
+  }
+
+  /* STORE rules */
+  #store_logo {
+    width: 20%;
+    margin-top: 69px;
+  }
+
+}
+
+
+/* Timeline Separators Media Queries */
+
+@media only screen and (min-width: 1170px) {
+  .cd-is-hidden {
+    visibility: hidden;
+  }
+
+  .cd-timeline__img.cd-timeline__img--bounce-in {
+    visibility: visible;
+    animation: cd-bounce-1 0.6s;
+  }
+}
